@@ -1,4 +1,4 @@
-# ncbi_tolls
+# ncbi_tools
 NCBI tools
 
 
