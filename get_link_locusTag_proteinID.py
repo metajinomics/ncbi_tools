@@ -1,9 +1,9 @@
 #!/usr/bin/python
 
 # this script make link between protein_id and locus_tag in genbank file
-# usage: python get_link_proteinID_locusTag.py genbankfile > output
-# example: for x in *.gbff;do python get_link_proteinID_locusTag.py $x;done > output
-# example: for x in *.gbff;do python get_line_proteinID_locusTag.py $x > $x.link;done 
+# usage: python get_link_locusTag_proteinID.py genbankfile > output
+# example: for x in *.gbff;do python get_link_locusTag_proteinID.py $x;done > output
+# example: for x in *.gbff;do python get_link_locusTag_proteinID.py $x > $x.link;done 
 
 import sys
 import gzip
