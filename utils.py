@@ -1,4 +1,4 @@
-
+import gzip
 from string import maketrans
 
 def get_rc(seq):
@@ -123,7 +123,11 @@ def read_fasta(filename):
     return dict
     
 def read_fasta_refseq(filename):
-    fread = open(filename,'r')
+    if filename[-2:] == 'gz':
+        fread = gzip.open(filename,'rb')
+    else:
+        fread = open(filename,'r')
+
     dict = {} 
     name = ""
     flag = 0
