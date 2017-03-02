@@ -3,6 +3,13 @@ NCBI tools
 
 
 ### Ganbank to fasta
+
+#### fetch fasta file with CDS from NCBI 
+First, you need a file that contains NCBI ID that you want to fetch. If you filename is list_id.txt, then
+```
+python fetch_fasta_cds.py list_id.txt output_dir_name
+```
+
 #### genbank to nucleotide
 gz file supported
 ```
