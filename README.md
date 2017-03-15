@@ -1,17 +1,41 @@
 # ncbi_tools
-NCBI tools
+This repository provide useful tools for data of NCBI 
 
+First, you need a file that contains NCBI ID that you want to fetch. If you filename is id_list.txt, then
 
-### Ganbank to fasta
-
-#### fetch fasta file with CDS from NCBI 
-First, you need a file that contains NCBI ID that you want to fetch. If you filename is list_id.txt, then
+### Download Genbank file
 ```
-python fetch_fasta_cds.py list_id.txt output_dir_name
+python fetch_genbank.py id_list.txt output_folder
 ```
+
+### Download FASTA file
+#### Download Full genome nucleotide seqeunce
+```
+python fetch_fasta_genome.py id_list.txt output_folder
+```
+
+#### Download feature gene (CDS) nucleotide sequence
+```
+python fetch_fasta_cds.py id_list.txt output_folder
+```
+
+#### Download feature gene (CDS) Protein amino-acid sequence
+```
+python fetch_fasta_protein.py id_list.txt output_folder
+```
+
+#### Download specific part of genome
+In this case input file (id_list.txt) need to have three column (accession_ID, start position, end position) with tab separated value
+```
+python fetch_fasta_part.py id_list.txt output_folder
+```
+
+### Genbank to fasta
+If you already have Genbank file, you can extract nucleotide sequence and/or amino-acid sequence. Note, you need to have FULL-VERSION of the file. If not, you won't be able to extract nucloetide sequence.
+ 
 
 #### genbank to nucleotide
-gz file supported
+Note, gz file supported
 ```
 python genbank_to_fna.py genbankfile.gbk > output.fna
 ```
