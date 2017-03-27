@@ -1,7 +1,7 @@
 #!/usr/bin/python
 
 #this script will get all taxonomy rank for all available
-#usage: python get_taxonomy_all.py uniq.tax.id > full_tax_table.txt
+#usage: python get_taxonomy_all.py categories.dmp > full_tax_table.txt
 
 import sys
 import taxonomy_finder
