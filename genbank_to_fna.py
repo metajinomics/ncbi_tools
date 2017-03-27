@@ -23,6 +23,8 @@ def main():
                     name = feat.qualifiers['locus_tag'][0]
                 elif("gene" in feat.qualifiers):
                     name = feat.qualifiers['gene'][0]
+                elif("db_xref" in feat.qualifiers):
+                    name = feat.qualifiers['db_xref'][0]
                 print ">%s from %s\n%s" %(name,genome_name,feat.extract(gb_record.seq))
 
 if __name__ == '__main__':
