@@ -38,7 +38,7 @@ for n, line in enumerate(open(sys.argv[1],'r')):
             r = 1
 
         else:
-            save1.append("@"+spl[1]+' '+spl[3]+'\n')
+            save2.append("@"+spl[1]+' '+spl[3]+'\n')
             r = 2
 
     else:
