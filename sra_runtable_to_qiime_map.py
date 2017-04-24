@@ -10,6 +10,6 @@ for n,line in enumerate(open(sys.argv[1],'r')):
     if n == 0:
         Run_s = [i for i, s in enumerate(spl) if 'Run_s' in s]
         Sample_Name_s = [i for i, s in enumerate(spl) if 'Sample_Name_s' in s]
-        print "#SampleID\tRun_s"
+        print "#SampleID\tRun_s\tInputFileName"
     else:
-        print spl[Sample_Name_s[0]]+'\t'+spl[Run_s[0]]
+        print spl[Sample_Name_s[0]]+'\t'+spl[Run_s[0]]+'\t'+spl[Run_s[0]]+'.fasta'
