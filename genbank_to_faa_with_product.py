@@ -29,7 +29,7 @@ def main():
                 if ("product" in feat.qualifiers):
                     product = feat.qualifiers['product'][0]
                 if ("translation" in feat.qualifiers):
-                    print ">%s from %s %s\n%s" %(name,genome_name,product,genome_name,feat.qualifiers['translation'][0])
+                    print ">%s from %s %s\n%s" %(name,genome_name,product,feat.qualifiers['translation'][0])
 
 if __name__ == '__main__':
     main()
