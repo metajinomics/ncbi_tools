@@ -28,7 +28,8 @@ def main():
                     name = feat.qualifiers['db_xref'][0]
                 if ("product" in feat.qualifiers):
                     product = feat.qualifiers['product'][0]
-                print ">%s from %s %s\n%s" %(name,genome_name,product,feat.extract(gb_record.seq))
+                if ("translation" in feat.qualifiers):
+                    print ">%s from %s %s\n%s" %(name,genome_name,product,genome_name,feat.qualifiers['translation'][0])
 
 if __name__ == '__main__':
     main()
