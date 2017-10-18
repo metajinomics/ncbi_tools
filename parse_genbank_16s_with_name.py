@@ -11,7 +11,7 @@ l = []
 for record in list(SeqIO.parse(sys.argv[1], 'genbank')):
     org = record.annotations["source"]
     genome_name = record.name
-    tax = gb_record.annotations['taxonomy'][1]
+    tax = record.annotations['taxonomy'][1]
     for feat in genome.features:
         if feat.type == "rRNA":
             if '16S' in feat.qualifiers['product'][0]:#or '16S ribosomal' for strict match
