@@ -10,6 +10,7 @@ l = []
 
 for record in list(SeqIO.parse(sys.argv[1], 'genbank')):
     org = record.annotations["source"]
+    genome_name = record.name
     for feat in genome.features:
         if feat.type == "rRNA":
             if '16S' in feat.qualifiers['product'][0]:#or '16S ribosomal' for strict match
@@ -18,7 +19,7 @@ for record in list(SeqIO.parse(sys.argv[1], 'genbank')):
                 pos = [start, end]
                 l.append(pos)
                 idname = record.id.split('.')
-                print '>' + idname[0] +' ' + org + ' '+ '16S rRNA gene' + str(n)                
+                print '>' + genome_name.replace(' ','') + str(n)                
             #            print '>' + sys.argv[1].split('.')[0] + ' 16S rRNA gene ' + str(n) 
                 print feat.extract(genome.seq)
                 n =+ 1
