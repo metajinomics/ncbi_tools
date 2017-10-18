@@ -9,7 +9,8 @@ n = 0
 l = []
 
 for record in list(SeqIO.parse(sys.argv[1], 'genbank')):
-    org = record.annotations["source"].replace(' ','_')
+    org = record.description.replace(' ','_').split(',')[0]
+    #org = record.annotations["source"].replace(' ','_')
     genome_name = record.name
     tax = record.annotations['taxonomy'][1]
     for feat in genome.features:
