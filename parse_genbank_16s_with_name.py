@@ -9,7 +9,7 @@ n = 0
 l = []
 
 for record in list(SeqIO.parse(sys.argv[1], 'genbank')):
-    org = record.annotations["source"]
+    org = record.annotations["source"].replace(' ','_')
     genome_name = record.name
     tax = record.annotations['taxonomy'][1]
     for feat in genome.features:
@@ -20,7 +20,7 @@ for record in list(SeqIO.parse(sys.argv[1], 'genbank')):
                 pos = [start, end]
                 l.append(pos)
                 idname = record.id.split('.')
-                print '>' + tax + "_" + genome_name.replace(' ','') + str(n)                
+                print '>' + tax + "_" + org + str(n)                
             #            print '>' + sys.argv[1].split('.')[0] + ' 16S rRNA gene ' + str(n) 
                 print feat.extract(genome.seq)
                 n =+ 1
