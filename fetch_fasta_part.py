@@ -15,6 +15,13 @@ def get_rc(seq):
     seq = seq[::-1]
     return seq
 
+def get_from_url(seq):
+    spl = seq.split('\n')
+    if(len(spl)>1):
+        spl[1]= get_rc(spl[1])
+    seq = '\n'.join(spl)
+    return seq
+
 if len(sys.argv) != 3:
     print "USAGE: fetch_fasta_part.py <genome_id_list> <out_dir>"
     sys.exit(1)
@@ -45,7 +52,7 @@ for id in open(sys.argv[1]):
     else :
         seq = urllib2.urlopen(s1).read()
         if(words[3] == "minus" or words[3] == "-"):
-            seq = reverse_complement.get_from_url(seq)
+            seq = get_from_url(seq)
         open(gbk_out_file, "w").write(seq)
         
     print "Done"
